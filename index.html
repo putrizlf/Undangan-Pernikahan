@@ -18,6 +18,11 @@
     <meta name="twitter:description" content="Please Open & Save The Date">
     <meta name="twitter:image" content="https://putrizlf.github.io/Undangan-Pernikahan/preview.jpeg">
 
+    <!-- Mobile Fullscreen / Web App Capabilities -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Playfair Display, Great Vibes, Plus Jakarta Sans -->
@@ -228,7 +233,7 @@
         <!-- ================= SCENE 1: COVER & WELCOME ================= -->
         <!-- Memakai mempelai.jpeg sebagai latar dengan overlay terang agar tampak anggun & tulisan terbaca jelas -->
         <section id="scene-1"
-    class="relative z-10 min-h-screen flex flex-col items-center text-center p-6 bg-cover bg-center transition-all duration-1000"
+    class="relative z-10 min-h-[100dvh] flex flex-col items-center text-center p-6 bg-cover bg-center transition-all duration-1000"
     style="background-image: linear-gradient(to bottom, rgba(253, 251, 247, 0.50), rgba(248, 244, 235, 0.30), rgba(253, 251, 247, 0.60)), url('mempelai.jpeg');">
 
     <!-- ==================== BAGIAN ATAS ==================== -->
@@ -667,6 +672,16 @@
 
         // Open Invitation Logic
         function openInvitation() {
+            // Trigger Mobile / Desktop Fullscreen Mode
+            const docElem = document.documentElement;
+            if (docElem.requestFullscreen) {
+                docElem.requestFullscreen().catch(e => console.log("Fullscreen blocked or not supported:", e));
+            } else if (docElem.webkitRequestFullscreen) { // Safari / iOS support
+                docElem.webkitRequestFullscreen();
+            } else if (docElem.msRequestFullscreen) { // IE / Edge
+                docElem.msRequestFullscreen();
+            }
+
             document.getElementById('mainContent').classList.remove('hidden');
             document.getElementById('audioControl').classList.remove('hidden');
             
