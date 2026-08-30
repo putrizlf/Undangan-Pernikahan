@@ -227,48 +227,80 @@
         
         <!-- ================= SCENE 1: COVER & WELCOME ================= -->
         <!-- Memakai mempelai.jpeg sebagai latar dengan overlay terang agar tampak anggun & tulisan terbaca jelas -->
-        <section id="scene-1" class="relative z-10 min-h-screen flex flex-col justify-between items-center text-center p-6 bg-cover bg-center transition-all duration-1000" style="background-image: linear-gradient(to bottom, rgba(253, 251, 247, 0.50), rgba(248, 244, 235, 0.30), rgba(253, 251, 247, 0.60)), url('mempelai.jpeg');">
-            <!-- Top Ornament (Songkok Bugis & Sunting Melayu Animated) -->
-            <div class="pt-8 space-y-2">
-                <div class="flex justify-center items-center space-x-6">
-                    <!-- Songkok Bugis Image -->
-                    <div class="flex flex-col items-center animate-float" title="Songkok Recca (Adat Bugis)">
-                        <img src="songkok.png" alt="Songkok Bugis" class="w-24 h-24 object-contain filter drop-shadow-[0_6px_12px_rgba(161,98,7,0.3)] hover:scale-110 transition duration-300" onerror="this.style.display='none'">                        
-                    </div>
+        <section id="scene-1"
+    class="relative z-10 min-h-screen flex flex-col items-center text-center p-6 bg-cover bg-center transition-all duration-1000"
+    style="background-image: linear-gradient(to bottom, rgba(253, 251, 247, 0.50), rgba(248, 244, 235, 0.30), rgba(253, 251, 247, 0.60)), url('mempelai.jpeg');">
 
-                    <!-- Sunting Melayu Image -->
-                    <div class="flex flex-col items-center animate-float-delayed" title="Sunting (Adat Melayu)">
-                        <img src="sunting.png" alt="Sunting Melayu" class="w-28 h-28 object-contain filter drop-shadow-[0_6px_12px_rgba(161,98,7,0.3)] hover:scale-110 transition duration-300" onerror="this.style.display='none'">
-                    </div>
-                </div>
+    <!-- Top Ornament (Songkok Bugis & Sunting Melayu) -->
+    <div class="pt-2 space-y-2">
+        <div class="flex justify-center items-center space-x-6">
+
+            <!-- Songkok Bugis -->
+            <div class="flex flex-col items-center animate-float" title="Songkok Recca (Adat Bugis)">
+                <img src="songkok.png"
+                    alt="Songkok Bugis"
+                    class="w-24 h-24 object-contain filter drop-shadow-[0_6px_12px_rgba(161,98,7,0.3)] hover:scale-110 transition duration-300"
+                    onerror="this.style.display='none'">
             </div>
 
-            <!-- Couple Names & Title with Light Shimmer & Animated Badge -->
-            <div class="my-auto space-y-4 py-6">
-                <p class="text-xs font-semibold tracking-[0.3em] text-emerald-800 uppercase animate-pulse">THE WEDDING OF</p>
-                
-                <h1 class="font-cursive text-5xl md:text-6xl gold-gradient-text leading-relaxed py-2">
-                    Putri & Firman
-                </h1>
-                
-                <div class="inline-block px-5 py-2 rounded-full bg-white/90 border border-gold-500/40 shadow-sm backdrop-blur-md">
-                    <p class="text-xs text-emerald-900 tracking-widest font-bold"><i class="far fa-calendar-star mr-1 text-gold-600"></i> SABTU, 07 NOVEMBER 2026</p>
-                </div>
+            <!-- Sunting Melayu -->
+            <div class="flex flex-col items-center animate-float-delayed" title="Sunting (Adat Melayu)">
+                <img src="sunting.png"
+                    alt="Sunting Melayu"
+                    class="w-28 h-28 object-contain filter drop-shadow-[0_6px_12px_rgba(161,98,7,0.3)] hover:scale-110 transition duration-300"
+                    onerror="this.style.display='none'">
             </div>
 
-            <!-- Guest Greeting (Kepada Yth) & Open Button -->
-            <div class="w-full pb-8 space-y-4">
-                <div class="bg-white/90 border border-gold-500/30 rounded-2xl p-4 backdrop-blur-md shadow-lg transform transition hover:scale-[1.02]">
-                    <p class="text-[11px] text-slate-600 mb-1 tracking-wide">Kepada Yth. Bapak/Ibu/Saudara/i</p>
-                    <h3 id="guestName" class="text-lg font-bold text-emerald-900 font-serif tracking-wide">Tamu Undangan</h3>
-                </div>
+        </div>
+    </div>
 
-                <button onclick="openInvitation()" class="btn-sheen w-full py-4 px-6 rounded-full bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white font-bold text-sm tracking-widest shadow-[0_4px_20px_rgba(202,138,4,0.35)] hover:brightness-110 active:scale-95 transition-all duration-300 flex items-center justify-center space-x-2">
-                    <i class="fas fa-envelope-open text-base animate-bounce"></i>
-                    <span>BUKA UNDANGAN</span>
-                </button>
-            </div>
-        </section>
+
+    <!-- Couple Names & Title -->
+    <div class="space-y-3 pt-3">
+
+        <p class="text-xs font-semibold tracking-[0.3em] text-emerald-800 uppercase animate-pulse">
+            THE WEDDING OF
+        </p>
+
+        <h1 class="font-cursive text-5xl md:text-6xl gold-gradient-text leading-relaxed py-1">
+            Putri & Firman
+        </h1>
+
+        <div class="inline-block px-5 py-2 rounded-full bg-white/90 border border-gold-500/40 shadow-sm backdrop-blur-md">
+            <p class="text-xs text-emerald-900 tracking-widest font-bold">
+                <i class="far fa-calendar-star mr-1 text-gold-600"></i>
+                SABTU, 07 NOVEMBER 2026
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- Guest Greeting & Open Button -->
+    <div class="w-full pb-8 mt-auto space-y-4">
+
+        <div class="bg-white/90 border border-gold-500/30 rounded-2xl p-4 backdrop-blur-md shadow-lg transform transition hover:scale-[1.02]">
+            <p class="text-[11px] text-slate-600 mb-1 tracking-wide">
+                Kepada Yth. Bapak/Ibu/Saudara/i
+            </p>
+
+            <h3 id="guestName"
+                class="text-lg font-bold text-emerald-900 font-serif tracking-wide">
+                Tamu Undangan
+            </h3>
+        </div>
+
+        <button onclick="openInvitation()"
+            class="btn-sheen w-full py-4 px-6 rounded-full bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white font-bold text-sm tracking-widest shadow-[0_4px_20px_rgba(202,138,4,0.35)] hover:brightness-110 active:scale-95 transition-all duration-300 flex items-center justify-center space-x-2">
+
+            <i class="fas fa-envelope-open text-base animate-bounce"></i>
+            <span>BUKA UNDANGAN</span>
+
+        </button>
+
+    </div>
+
+</section>
 
         <!-- CONTENT SECTION (Hidden before click) -->
         <div id="mainContent" class="hidden relative z-10">
