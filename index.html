@@ -213,7 +213,7 @@
         .delay-500 { transition-delay: 500ms; }
     </style>
 </head>
-<body class="bg-cream-100 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white pb-20">
+<body class="bg-cream-100 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white">
 
     <!-- Audio Player Controls -->
     <div id="audioControl" class="fixed top-5 right-5 z-50 hidden">
@@ -221,36 +221,6 @@
             <i id="audioIcon" class="fas fa-music animate-spin"></i>
         </button>
     </div>
-
-    <!-- Navigasi Pintas Bottom Bar (Floating Bar) -->
-    <nav id="bottomNav" class="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 hidden w-[92%] max-w-sm bg-white/90 border border-gold-500/40 backdrop-blur-lg rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.15)] px-4 py-2 transition-all duration-500">
-        <div class="flex items-center justify-around text-slate-600 text-[10px] font-semibold">
-            <a href="#scene-1" onclick="scrollToId('scene-1')" class="flex flex-col items-center hover:text-gold-600 transition p-1">
-                <i class="fas fa-home text-base mb-0.5 text-gold-600"></i>
-                <span>Beranda</span>
-            </a>
-            <a href="#mempelai" onclick="scrollToId('mempelai')" class="flex flex-col items-center hover:text-gold-600 transition p-1">
-                <i class="fas fa-heart text-base mb-0.5 text-gold-600"></i>
-                <span>Mempelai</span>
-            </a>
-            <a href="#acara" onclick="scrollToId('acara')" class="flex flex-col items-center hover:text-gold-600 transition p-1">
-                <i class="fas fa-calendar-alt text-base mb-0.5 text-gold-600"></i>
-                <span>Acara</span>
-            </a>
-            <a href="#turut-mengundang" onclick="scrollToId('turut-mengundang')" class="flex flex-col items-center hover:text-gold-600 transition p-1">
-                <i class="fas fa-users text-base mb-0.5 text-gold-600"></i>
-                <span>Mengundang</span>
-            </a>
-            <a href="#galeri" onclick="scrollToId('galeri')" class="flex flex-col items-center hover:text-gold-600 transition p-1">
-                <i class="fas fa-images text-base mb-0.5 text-gold-600"></i>
-                <span>Galeri</span>
-            </a>
-            <a href="#hadiah" onclick="scrollToId('hadiah')" class="flex flex-col items-center hover:text-gold-600 transition p-1">
-                <i class="fas fa-gift text-base mb-0.5 text-gold-600"></i>
-                <span>Hadiah</span>
-            </a>
-        </div>
-    </nav>
 
     <!-- MAIN CONTAINER -->
     <div class="max-w-md mx-auto min-h-screen bg-cream-50 relative shadow-2xl overflow-hidden border-x border-cream-200">
@@ -370,7 +340,7 @@
             </section>
             
             <!-- ================= SCENE 2: BRIDE & GROOM ================= -->
-            <section id="mempelai" class="px-6 py-16 text-center border-b border-gold-500/20">
+            <section class="px-6 py-16 text-center border-b border-gold-500/20">
                 <div class="reveal reveal-scale flex justify-center mb-4">
                     <div class="w-10 h-10 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-600 border border-gold-500/30">
                         <i class="fas fa-heart text-gold-600 animate-heartbeat"></i>
@@ -414,7 +384,7 @@
             </section>
 
             <!-- ================= SCENE 3 & 4: RANGKAIAN ACARA & KALENDER NOVEMBER 2026 ================= -->
-            <section id="acara" class="px-6 py-16 text-center border-b border-gold-500/20 bg-cream-100/40">
+            <section class="px-6 py-16 text-center border-b border-gold-500/20 bg-cream-100/40">
                 <div class="reveal reveal-scale w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-600 border border-gold-500/30">
                     <i class="far fa-calendar-star text-xl animate-float"></i>
                 </div>
@@ -543,71 +513,71 @@
                         </div>
                     </div>
 
-                    <!-- Action Buttons: Simpan Tanggal & Google Maps -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                        <!-- Tombol Simpan Tanggal (Google Calendar) -->
-                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Putri+%26+Firman&dates=20261107T010000Z/20261107T110000Z&details=Syukuran+Pernikahan+Putri+%26+Firman&location=Jl.+Teduh+No.+32,+Kota+Dumai" target="_blank" class="btn-sheen inline-flex items-center justify-center space-x-2 py-3.5 px-4 rounded-2xl bg-gradient-to-r from-gold-600 to-gold-500 text-white text-xs font-bold hover:brightness-110 transition duration-300 shadow-md">
-                            <i class="far fa-calendar-plus text-sm"></i>
-                            <span>Simpan ke Kalender</span>
-                        </a>
-
-                        <!-- Tombol Google Maps -->
-                        <a href="https://maps.app.goo.gl/yCtM3jnV6yepYyNE6" target="_blank" class="btn-sheen inline-flex items-center justify-center space-x-2 py-3.5 px-4 rounded-2xl bg-emerald-900 border border-emerald-800 text-white text-xs font-bold hover:bg-emerald-800 transition duration-300 shadow-md">
-                            <i class="fas fa-directions text-sm text-gold-300"></i>
-                            <span>Petunjuk Lokasi Maps</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ================= SCENE TURUT MENGUNDANG ================= -->
-            <section id="turut-mengundang" class="px-6 py-16 text-center border-b border-gold-500/20 bg-cream-100/60">
-                <div class="reveal reveal-scale w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-600 border border-gold-500/30">
-                    <i class="fas fa-users text-xl animate-float"></i>
-                </div>
-                <h2 class="reveal reveal-fade-up font-serif text-2xl font-bold gold-gradient-text mb-2">Turut Mengundang</h2>
-                <p class="reveal reveal-fade-up delay-100 text-xs text-slate-600 mb-8">Keluarga Besar Pengantin</p>
-
-                <div class="reveal reveal-fade-up delay-150 grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                    <!-- Pihak Laki-Laki -->
-                    <div class="bg-white/90 border border-gold-500/30 rounded-3xl p-6 backdrop-blur-md shadow-lg">
-                        <div class="flex items-center space-x-2 mb-4 border-b border-gold-500/20 pb-3">
-                            <div class="w-7 h-7 rounded-full bg-emerald-900 text-gold-300 flex items-center justify-center text-xs font-bold">
-                                <i class="fas fa-male"></i>
-                            </div>
-                            <h3 class="font-serif font-bold text-emerald-950 text-sm">Keluarga Mempelai Pria</h3>
-                        </div>
-                        <ul class="text-xs text-slate-700 space-y-2 font-medium">
-                            <li class="flex items-start"><i class="fas fa-chevron-right text-[9px] text-gold-600 mr-2 mt-1"></i> Bpk. Hj. Mansyur & Ibu (Alm)</li>
-                            <li class="flex items-start"><i class="fas fa-chevron-right text-[9px] text-gold-600 mr-2 mt-1"></i> Bpk. H. Abdurrahman & Keluarga</li>
-                            <li class="flex items-start"><i class="fas fa-chevron-right text-[9px] text-gold-600 mr-2 mt-1"></i> Bpk. Ir. Hasanuddin</li>
-                            <li class="flex items-start"><i class="fas fa-chevron-right text-[9px] text-gold-600 mr-2 mt-1"></i> Serta segenap kerabat / sanak keluarga</li>
-                        </ul>
-                    </div>
-
-                    <!-- Pihak Perempuan -->
-                    <div class="bg-white/90 border border-gold-500/30 rounded-3xl p-6 backdrop-blur-md shadow-lg">
-                        <div class="flex items-center space-x-2 mb-4 border-b border-gold-500/20 pb-3">
-                            <div class="w-7 h-7 rounded-full bg-emerald-900 text-gold-300 flex items-center justify-center text-xs font-bold">
-                                <i class="fas fa-female"></i>
-                            </div>
-                            <h3 class="font-serif font-bold text-emerald-950 text-sm">Keluarga Mempelai Wanita</h3>
-                        </div>
-                        <ul class="text-xs text-slate-700 space-y-2 font-medium">
-                            <li class="flex items-start"><i class="fas fa-chevron-right text-[9px] text-gold-600 mr-2 mt-1"></i> Bpk. H. Mahmudin & Ibu Hjh. Rohani</li>
-                            <li class="flex items-start"><i class="fas fa-chevron-right text-[9px] text-gold-600 mr-2 mt-1"></i> Bpk. Dr. Syafruddin, M.Si</li>
-                            <li class="flex items-start"><i class="fas fa-chevron-right text-[9px] text-gold-600 mr-2 mt-1"></i> Bpk. Tengku Iskandar & Keluarga</li>
-                            <li class="flex items-start"><i class="fas fa-chevron-right text-[9px] text-gold-600 mr-2 mt-1"></i> Serta segenap kerabat / sanak keluarga</li>
-                        </ul>
-                    </div>
+                    <a href="https://maps.app.goo.gl/yCtM3jnV6yepYyNE6" target="_blank" class="btn-sheen inline-flex items-center justify-center space-x-2 w-full py-3.5 mt-2 rounded-2xl bg-emerald-900 border border-emerald-800 text-white text-xs font-bold hover:bg-emerald-800 transition duration-300 shadow-md">
+                        <i class="fas fa-directions text-sm text-gold-300"></i>
+                        <span>Petunjuk Lokasi Google Maps</span>
+                    </a>
                 </div>
             </section>
 
             <!-- ================= SCENE 6: GALLERY ================= -->
-            <section id="galeri" class="px-6 py-16 text-center border-b border-gold-500/20">
-                    <p class="text-xs text-slate-600 leading-relaxed max-w-xs mx-auto">
+            <section class="px-6 py-16 text-center border-b border-gold-500/20">
+                <div class="reveal reveal-scale w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-600 border border-gold-500/30">
+                    <i class="fas fa-images text-xl animate-float"></i>
+                </div>
+                <h2 class="reveal reveal-fade-up font-serif text-2xl font-bold gold-gradient-text mb-2">Galeri Bahagia</h2>
+                <p class="reveal reveal-fade-up delay-100 text-xs text-slate-600 mb-8">Momen Indah Perjalanan Cinta Kami</p>
+
+                <!-- Grid Galeri khusus Portrait -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="reveal reveal-scale delay-100 overflow-hidden rounded-2xl border border-gold-500/30 aspect-[3/4] bg-white shadow-md group relative">
+                        <img src="galeri1.jpeg" alt="Galeri 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=400'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-3">
+                            <span class="text-[10px] text-gold-200 font-semibold"><i class="fas fa-heart text-red-400 mr-1"></i> Firman</span>
+                        </div>
+                    </div>
+                    <div class="reveal reveal-scale delay-200 overflow-hidden rounded-2xl border border-gold-500/30 aspect-[3/4] bg-white shadow-md group relative">
+                        <img src="galeri2.jpeg" alt="Galeri 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=400'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-3">
+                            <span class="text-[10px] text-gold-200 font-semibold"><i class="fas fa-heart text-red-400 mr-1"></i> Putri</span>
+                        </div>
+                    </div>
+                    <div class="reveal reveal-scale delay-300 overflow-hidden rounded-2xl border border-gold-500/30 aspect-[3/4] bg-white shadow-md group relative">
+                        <img src="galeri3.jpeg" alt="Galeri 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=400'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-3">
+                            <span class="text-[10px] text-gold-200 font-semibold"><i class="fas fa-heart text-red-400 mr-1"></i> Bertunangan</span>
+                        </div>
+                    </div>
+                    <div class="reveal reveal-scale delay-400 overflow-hidden rounded-2xl border border-gold-500/30 aspect-[3/4] bg-white shadow-md group relative">
+                        <img src="galeri4.jpeg" alt="Galeri 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=400'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-3">
+                            <span class="text-[10px] text-gold-200 font-semibold"><i class="fas fa-heart text-red-400 mr-1"></i> Menuju Hari H</span>
+                        </div>
+                    </div>
+                </div>
+            </section>            
+
             <!-- ================= SCENE 8: WEDDING GIFT ================= -->
-            <section id="hadiah" class="px-6 py-16 text-center border-b border-gold-500/20">
+            <section class="px-6 py-16 text-center border-b border-gold-500/20">
+                <div class="reveal reveal-scale w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-600 border border-gold-500/30">
+                    <i class="fas fa-gift text-xl animate-float"></i>
+                </div>
+                <h2 class="reveal reveal-fade-up font-serif text-2xl font-bold gold-gradient-text mb-2">Tanda Kasih (Gift)</h2>
+                <p class="reveal reveal-fade-up delay-100 text-xs text-slate-600 mb-8 max-w-xs mx-auto">Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberi hadiah, kami menyediakan sarana di bawah ini.</p>
+
+                <button onclick="openGiftModal()" class="reveal reveal-scale delay-200 btn-sheen py-3.5 px-8 rounded-full bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white font-bold text-xs tracking-wider shadow-lg hover:brightness-110 active:scale-95 transition-all duration-300 inline-flex items-center space-x-2">
+                    <i class="fas fa-hand-holding-heart text-sm"></i>
+                    <span>KIRIM HADIAH</span>
+                </button>
+            </section>
+
+            <!-- ================= SCENE 9: THANK YOU & CLOSING ================= -->
+            <section class="px-6 py-16 text-center">
+                <div class="reveal reveal-fade-up space-y-4">
+                    <h2 class="font-cursive text-5xl gold-gradient-text">Terima Kasih</h2>
+                    <p class="text-xs text-slate-600 leading-relaxed max-w-xs mx-auto">
+                        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai.
+                    </p>
                     <p class="text-xs text-emerald-900 font-bold pt-4">Kami yang berbahagia,</p>
                     <p class="font-serif text-lg font-bold text-slate-800">Keluarga Besar</p>
                     <p class="font-cursive text-4xl text-emerald-800 pt-2">Putri & Firman</p>
@@ -714,7 +684,6 @@
 
             document.getElementById('mainContent').classList.remove('hidden');
             document.getElementById('audioControl').classList.remove('hidden');
-            document.getElementById('bottomNav').classList.remove('hidden');
             
             // Auto Play Audio
             const audio = document.getElementById('bgMusic');
@@ -725,14 +694,6 @@
 
             // Trigger initial scroll animation check
             setTimeout(checkScroll, 100);
-        }
-
-        // Helper Function for Smooth Scroll Navigation
-        function scrollToId(id) {
-            const target = document.getElementById(id);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
         }
 
         // Audio Control Logic
