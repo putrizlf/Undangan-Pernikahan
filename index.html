@@ -1056,8 +1056,8 @@
         // Master Collection of 10 Photos (Exact Requested Layout: P1-P2, L1, P3-P4, L2, P5-P8)
         const galleryImages = [
             // 1-2: Portrait 2 kolom (P1 & P2)
-            { id: 0, src: 'P1.jpg', span: 'col-span-1 aspect-[2/3]' },
-            { id: 1, src: 'P2.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]'},
+            { id: 0, src: 'P1.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Potret Kebersamaan 1'},
+            { id: 1, src: 'P2.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Potret Kebersamaan 2'},
 
             // 3: Landscape Full Width (L1)
             { id: 2, src: 'L1.jpg', aspect: 'landscape', span: 'col-span-2 aspect-[3/2]', caption: 'Momen Indah Kebersamaan' },
@@ -1093,8 +1093,8 @@
                     <img src="${item.src}" alt="${item.caption}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800'">
                     <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent opacity-75 group-hover:opacity-95 transition duration-300 flex items-end p-3 text-left">
                         <div>
-                            <span class="text-[9px] text-gold-200 font-bold uppercase tracking-wider block mb-0.5">${item.aspect}</span>
-                            <p class="text-xs font-serif font-semibold text-white leading-tight">${item.caption}</p>
+                            <span class="text-[9px] text-gold-200 font-bold uppercase tracking-wider block mb-0.5"></span>
+                            <p class="text-xs font-serif font-semibold text-white leading-tight"></p>
                         </div>
                     </div>
                     <div class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-[10px] opacity-0 group-hover:opacity-100 transition duration-300">
