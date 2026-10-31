@@ -584,12 +584,7 @@
                 <h2 class="reveal reveal-fade-up font-serif text-2xl font-bold gold-gradient-text mb-2">Galeri Bahagia</h2>
                 <p class="reveal reveal-fade-up delay-100 text-xs text-slate-600 mb-6 max-w-xs mx-auto">Potret Kebersamaan & Momen Indah Putri & Firman</p>
 
-                <!-- Filter Button Tabs (Lanskap & Potret) -->
-                <div class="reveal reveal-fade-up delay-150 flex flex-wrap justify-center gap-2 mb-6">
-                    <button onclick="filterGallery('all')" id="filterAll" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-900 text-gold-300 border border-emerald-800 shadow-sm transition">Semua</button>
-                    <button onclick="filterGallery('landscape')" id="filterLandscape" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-white/80 text-slate-700 border border-gold-500/30 hover:border-gold-500 transition">Lanskap 🖼️</button>
-                    <button onclick="filterGallery('portrait')" id="filterPortrait" class="gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-white/80 text-slate-700 border border-gold-500/30 hover:border-gold-500 transition">Potret 📱</button>
-                </div>
+                
 
                 <!-- Flexible Grid Layout Supporting Landscape & Portrait Photos -->
                 <div id="galleryContainer" class="grid grid-cols-2 gap-3.5">
@@ -1061,8 +1056,8 @@
         // Master Collection of 10 Photos (Exact Requested Layout: P1-P2, L1, P3-P4, L2, P5-P8)
         const galleryImages = [
             // 1-2: Portrait 2 kolom (P1 & P2)
-            { id: 0, src: 'P1.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Momen Bahagia 1' },
-            { id: 1, src: 'P2.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Momen Bahagia 2' },
+            { id: 0, src: 'P1.jpg', span: 'col-span-1 aspect-[2/3]' },
+            { id: 1, src: 'P2.jpg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]'},
 
             // 3: Landscape Full Width (L1)
             { id: 2, src: 'L1.jpg', aspect: 'landscape', span: 'col-span-2 aspect-[3/2]', caption: 'Momen Indah Kebersamaan' },
