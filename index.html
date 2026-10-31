@@ -295,7 +295,7 @@
         <!-- ================= SCENE 1: COVER & WELCOME ================= -->
         <section id="scene-1"
             class="relative z-10 min-h-[100dvh] flex flex-col items-center text-center p-6 bg-cover bg-center transition-all duration-1000"
-            style="background-image: linear-gradient(to bottom, rgba(253, 251, 247, 0.55), rgba(248, 244, 235, 0.35), rgba(253, 251, 247, 0.65)), url('mempelai.jpg');">
+            style="background-image: linear-gradient(to bottom, rgba(253, 251, 247, 0.55), rgba(248, 244, 235, 0.35), rgba(253, 251, 247, 0.65)), url('mempelai.jpeg');">
 
             <!-- BAGIAN ATAS -->
             <div class="absolute top-14 left-0 right-0 flex flex-col items-center">                
@@ -645,7 +645,7 @@
                         <span>Muat Foto Lainnya (<span id="photoCounter">0</span>)</span>
                     </button>
                 </div>
-            </section>           
+            </section>            
 
             <!-- ================= SCENE: WEDDING GIFT ================= -->
             <section id="gift-section" class="px-6 py-16 text-center border-b border-gold-500/20">
@@ -714,12 +714,17 @@
                 </li>
 
                 <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Abdullah &amp; Rita Yunita</span>
+                    <span class="text-left">Abdullah &amp; Ita</span>
                     <span class="text-right text-slate-500 whitespace-nowrap">Om &amp; Tante</span>
                 </li>
 
                 <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Muhammad Idris &amp; Desrawati</span>
+                    <span class="text-left">Arisman &amp; Mia</span>
+                    <span class="text-right text-slate-500 whitespace-nowrap">Om &amp; Tante</span>
+                </li>
+
+                <li class="flex items-start justify-between gap-4">
+                    <span class="text-left">Agus &amp; Sofia</span>
                     <span class="text-right text-slate-500 whitespace-nowrap">Om &amp; Tante</span>
                 </li>
 
@@ -729,17 +734,7 @@
                 </li>
 
                 <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Norma &amp; Abdul Aziz</span>
-                    <span class="text-right text-slate-500 whitespace-nowrap">Om &amp; Tante</span>
-                </li>
-                
-                <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Arisman &amp; Mia</span>
-                    <span class="text-right text-slate-500 whitespace-nowrap">Om &amp; Tante</span>
-                </li>
-
-                <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Agus &amp; Sofia</span>
+                    <span class="text-left">Abdul Aziz &amp; Norma</span>
                     <span class="text-right text-slate-500 whitespace-nowrap">Om &amp; Tante</span>
                 </li>
 
@@ -783,17 +778,12 @@
             <ul class="text-xs text-slate-700 space-y-2.5">
 
                 <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Hj. Badariah & H. Nawawi KN. (Alm)</span>
-                    <span class="text-right text-slate-500 whitespace-nowrap">Uwo &amp; Atuk</span>
-                </li>
-                
-                <li class="flex items-start justify-between gap-4">
                     <span class="text-left">Siti Fatimah &amp; Djumhuri Syukri</span>
                     <span class="text-right text-slate-500 whitespace-nowrap">Umi &amp; Abi</span>
                 </li>
 
                 <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Hj. Khairiyah, S.Pd &amp; H. Darwis, S.Pd</span>
+                    <span class="text-left">Hj. Khairiyah, S.Pd &amp; H. Darwis</span>
                     <span class="text-right text-slate-500 whitespace-nowrap">Mak Lung &amp; Pak Lung</span>
                 </li>
 
@@ -823,7 +813,7 @@
                 </li>
 
                 <li class="flex items-start justify-between gap-4">
-                    <span class="text-left">Ropiah, M.Pd &amp; Johari</span>
+                    <span class="text-left">Ropiah, S.Pd &amp; Johari</span>
                     <span class="text-right text-slate-500 whitespace-nowrap">Ibu &amp; Bapak</span>
                 </li>
 
@@ -840,6 +830,16 @@
                 <li class="flex items-start justify-between gap-4">
                     <span class="text-left">Erliza &amp; Sazuli</span>
                     <span class="text-right text-slate-500 whitespace-nowrap">Ucu &amp; Om</span>
+                </li>
+
+                <li class="flex items-start justify-between gap-4">
+                    <span class="text-left">Siska Afriyani, S.Pd.SD &amp; David H., A.Ma</span>
+                    <span class="text-right text-slate-500 whitespace-nowrap">Kakak &amp; Abang</span>
+                </li>
+
+                <li class="flex items-start justify-between gap-4">
+                    <span class="text-left">Nurhidayati, S.Pd &amp; Hamdani</span>
+                    <span class="text-right text-slate-500 whitespace-nowrap">Kakak &amp; Abang</span>
                 </li>
 
                 <li class="flex items-start justify-between gap-4">
@@ -1000,6 +1000,24 @@
             document.getElementById('guestName').innerText = guest;
         }
 
+        // Audio & Music Control Logic
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+
+        function toggleAudio() {
+            const audioIcon = document.getElementById('audioIcon');
+            if (isPlaying) {
+                bgMusic.pause();
+                audioIcon.className = 'fas fa-music';
+                isPlaying = false;
+            } else {
+                bgMusic.play().then(() => {
+                    audioIcon.className = 'fas fa-compact-disc animate-spin';
+                    isPlaying = true;
+                }).catch(e => console.log('Audio playback blocked:', e));
+            }
+        }
+
         // Open Invitation Logic
         function openInvitation() {
             // Trigger Fullscreen Mode
@@ -1008,109 +1026,172 @@
                 docElem.requestFullscreen().catch(e => console.log("Fullscreen notice:", e));
             } else if (docElem.webkitRequestFullscreen) {
                 docElem.webkitRequestFullscreen();
-            } else if (docElem.msRequestFullscreen) {
-                docElem.msRequestFullscreen();
             }
 
+            // Hide Cover, Show Main Content & Nav Bar
+            document.getElementById('scene-1').classList.add('hidden');
             document.getElementById('mainContent').classList.remove('hidden');
-            document.getElementById('audioControl').classList.remove('hidden');
             document.getElementById('bottomNav').classList.remove('hidden');
-            
-            // Sembunyikan tombol Buka Undangan setelah diklik
-            const btnOpen = document.getElementById('btnOpenInvitation');
-            if (btnOpen) {
-                btnOpen.classList.add('hidden');
-            }
+            document.getElementById('audioControl').classList.remove('hidden');
 
-            // Auto Play Audio
-            const audio = document.getElementById('bgMusic');
-            audio.play().catch(e => console.log("Autoplay policy: User interaction needed"));
+            // Play Music
+            toggleAudio();
 
-            // Smooth Scroll to Main Content
-            document.getElementById('mainContent').scrollIntoView({ behavior: 'smooth' });
-
-            // Trigger initial scroll animation check
-            setTimeout(checkScroll, 100);
-        }
-
-        // Audio Control Logic
-        let isPlaying = true;
-        function toggleAudio() {
-            const audio = document.getElementById('bgMusic');
-            const icon = document.getElementById('audioIcon');
-            if (isPlaying) {
-                audio.pause();
-                icon.classList.remove('animate-spin');
-                icon.classList.replace('fa-music', 'fa-volume-mute');
-            } else {
-                audio.play();
-                icon.classList.add('animate-spin');
-                icon.classList.replace('fa-volume-mute', 'fa-music');
-            }
-            isPlaying = !isPlaying;
-        }
-
-        // Reversible Scroll Reveal Animation (Adds & Removes active class on scroll)
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -20px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                } else {
-                    // Removes active class when scrolled out of view so animation resets on scroll back up
-                    entry.target.classList.remove('active');
-                }
-            });
-        }, observerOptions);
-
-        function checkScroll() {
-            const revealElements = document.querySelectorAll('.reveal');
-            revealElements.forEach(el => observer.observe(el));
+            // Trigger Scroll Check for Initial Reveal
+            checkScroll();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // Countdown Timer Logic
-        const targetDate = new Date("Nov 07, 2026 08:00:00").getTime();
-        setInterval(function() {
+        const weddingDate = new Date('November 7, 2026 09:00:00').getTime();
+
+        function updateCountdown() {
             const now = new Date().getTime();
-            const difference = targetDate - now;
+            const distance = weddingDate - now;
 
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-                document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = `<div class="col-span-4 text-center font-bold text-emerald-900 py-2">Acara Telah Berlangsung</div>`;
+                return;
             }
-        }, 1000);
 
-        // Lightbox Gallery Modal Logic
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Reversible Scroll Reveal Animations
+        function checkScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementBottom = el.getBoundingClientRect().bottom;
+
+                if (elementTop < windowHeight - 60 && elementBottom > 60) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', checkScroll);
+
+        // Lightbox Gallery Modal Logic & Dynamic Multi-Format Photo Gallery
         let currentImageIndex = 0;
+        let visibleCount = 6;
+        let currentFilter = 'all';
+
+        // Master Collection of Photos (Supports Landscape & Portrait Photos)
         const galleryImages = [
-            { id: 'galeriImg0', caption: 'Kebersamaan Cinta - Muhammad Firmansyah & Putri Zulfa' },
-            { id: 'galeriImg1', caption: 'Mempelai Wanita - Putri Zulfa' },
-            { id: 'galeriImg2', caption: 'Mempelai Pria - Muhammad Firmansyah' },
-            { id: 'galeriImg3', caption: 'Menuju Hari Bahagia - 07 November 2026' }
+            // 1-2: Portrait (2 kolom)
+            { id: 0, src: 'putri.jpeg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Mempelai Wanita - Putri Zulfa' },
+            { id: 1, src: 'firman.jpeg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Mempelai Pria - Muhammad Firmansyah' },
+
+            // 3: Landscape (Full width)
+            { id: 2, src: 'lamaran.jpeg', aspect: 'landscape', span: 'col-span-2 aspect-[3/2]', caption: 'Momen Bahagia Lamaran' },
+
+            // 4-5: Portrait (2 kolom)
+            { id: 3, src: 'wanita.jpeg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Potret Anggun' },
+            { id: 4, src: 'pria.jpeg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Potret Gagah' },
+
+            // 6: Landscape (Full width)
+            { id: 5, src: 'bersama.jpeg', aspect: 'landscape', span: 'col-span-2 aspect-[3/2]', caption: 'Kebersamaan Cinta' },
+
+            // 7-10: Portrait (2 kolom)
+            { id: 6, src: 'mempelai.jpeg', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Momen Prewedding 1' },
+            { id: 7, src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=400', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Momen Prewedding 2' },
+            { id: 8, src: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=400', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Sesi Foto Busana Adat' },
+            { id: 9, src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400', aspect: 'portrait', span: 'col-span-1 aspect-[2/3]', caption: 'Senyum Kebahagiaan' }
         ];
 
-        function openLightbox(index) {
-            currentImageIndex = index;
-            updateLightbox();
-            const modal = document.getElementById('lightboxModal');
-            modal.classList.remove('hidden');
+        function renderGallery() {
+            const container = document.getElementById('galleryContainer');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            const filtered = galleryImages.filter(img => currentFilter === 'all' || img.aspect === currentFilter);
+            const toDisplay = filtered.slice(0, visibleCount);
+
+            toDisplay.forEach((item) => {
+                const card = document.createElement('div');
+                card.className = `reveal reveal-scale relative overflow-hidden rounded-3xl border-2 border-gold-500/30 bg-white shadow-lg group cursor-pointer ${item.span}`;
+                card.onclick = () => openLightbox(item.id);
+                
+                card.innerHTML = `
+                    <img src="${item.src}" alt="${item.caption}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent opacity-75 group-hover:opacity-95 transition duration-300 flex items-end p-3 text-left">
+                        <div>
+                            <span class="text-[9px] text-gold-200 font-bold uppercase tracking-wider block mb-0.5">${item.aspect}</span>
+                            <p class="text-xs font-serif font-semibold text-white leading-tight">${item.caption}</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-black/40 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-[10px] opacity-0 group-hover:opacity-100 transition duration-300">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            // Update Counter & Button Visibility
+            const remaining = filtered.length - toDisplay.length;
+            const counterElem = document.getElementById('photoCounter');
+            const btnMore = document.getElementById('btnLoadMore');
+
+            if (counterElem) counterElem.innerText = remaining;
+            if (btnMore) {
+                if (remaining <= 0) {
+                    btnMore.classList.add('hidden');
+                } else {
+                    btnMore.classList.remove('hidden');
+                }
+            }
+
+            checkScroll();
+        }
+
+        function loadMorePhotos() {
+            visibleCount += 4;
+            renderGallery();
+        }
+
+        function filterGallery(type) {
+            currentFilter = type;
+            visibleCount = 6;
+            
+            // Update Tab Active States
+            const btns = document.querySelectorAll('.gallery-filter-btn');
+            btns.forEach(b => {
+                b.className = "gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-white/80 text-slate-700 border border-gold-500/30 hover:border-gold-500 transition";
+            });
+
+            if (type === 'all') document.getElementById('filterAll').className = "gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-900 text-gold-300 border border-emerald-800 shadow-sm transition";
+            if (type === 'landscape') document.getElementById('filterLandscape').className = "gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-900 text-gold-300 border border-emerald-800 shadow-sm transition";
+            if (type === 'portrait') document.getElementById('filterPortrait').className = "gallery-filter-btn px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-900 text-gold-300 border border-emerald-800 shadow-sm transition";
+
+            renderGallery();
+        }
+
+        function openLightbox(id) {
+            const index = galleryImages.findIndex(img => img.id === id);
+            if (index !== -1) {
+                currentImageIndex = index;
+                updateLightbox();
+                document.getElementById('lightboxModal').classList.remove('hidden');
+            }
         }
 
         function updateLightbox() {
             const item = galleryImages[currentImageIndex];
-            const imgElem = document.getElementById(item.id);
-            document.getElementById('lightboxImage').src = imgElem ? imgElem.src : '';
+            document.getElementById('lightboxImage').src = item.src;
             document.getElementById('lightboxCaption').innerText = item.caption;
         }
 
@@ -1127,6 +1208,11 @@
             currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
             updateLightbox();
         }
+
+        // Initialize Gallery on Page Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGallery();
+        });
 
         // Gift Modal Logic
         function openGiftModal() {
