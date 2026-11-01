@@ -953,6 +953,7 @@
 
     <!-- Hidden Audio Background -->
 
+    <!-- Hidden Audio Background -->
     <audio id="bgMusic" loop preload="auto" playsinline>
         <source src="lagu1.mp3" type="audio/mpeg">
     </audio>
@@ -965,9 +966,22 @@
             document.getElementById('guestName').innerText = guest;
         }
 
-        // Audio & Music Control Logic
+        // Audio & Music Control Logic (Optimized for Instagram In-App Browser & iOS/Android Autoplay)
         const bgMusic = document.getElementById('bgMusic');
         let isPlaying = false;
+        let audioContextUnlocked = false;
+
+        // Unlock Audio Engine for Safari & Instagram Webview on first touch
+        function unlockAudioEngine() {
+            if (audioContextUnlocked) return;
+            bgMusic.play().then(() => {
+                bgMusic.pause();
+                bgMusic.currentTime = 0;
+                audioContextUnlocked = true;
+            }).catch(() => {});
+        }
+        document.addEventListener('touchstart', unlockAudioEngine, { once: true });
+        document.addEventListener('click', unlockAudioEngine, { once: true });
 
         function toggleAudio() {
             const audioIcon = document.getElementById('audioIcon');
@@ -976,10 +990,17 @@
                 audioIcon.className = 'fas fa-music';
                 isPlaying = false;
             } else {
-                bgMusic.play().then(() => {
-                    audioIcon.className = 'fas fa-compact-disc animate-spin';
-                    isPlaying = true;
-                }).catch(e => console.log('Audio playback blocked:', e));
+                const playPromise = bgMusic.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        audioIcon.className = 'fas fa-compact-disc animate-spin';
+                        isPlaying = true;
+                    }).catch(e => {
+                        console.log('Audio autoplay blocked by browser:', e);
+                        isPlaying = false;
+                        audioIcon.className = 'fas fa-music';
+                    });
+                }
             }
         }
 
