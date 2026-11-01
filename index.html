@@ -1007,7 +1007,6 @@
         // Open Invitation Logic
         function openInvitation() {
             // Trigger Fullscreen Mode
-            playMusicDirectly();
             const docElem = document.documentElement;
             if (docElem.requestFullscreen) {
                 docElem.requestFullscreen().catch(e => console.log("Fullscreen notice:", e));
