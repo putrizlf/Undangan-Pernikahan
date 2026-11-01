@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Link Undangan Pernikahan Luxury</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            800: '#144637',
+                            900: '#0F382C',
+                            950: '#09241C',
+                        },
+                        gold: {
+                            300: '#EAD49B',
+                            400: '#DFC177',
+                            500: '#D4AF37',
+                            600: '#B89326',
+                        },
+                        cream: {
+                            50: '#FFFDF9',
+                            100: '#FDFBF7',
+                            200: '#F6F0E6',
+                            300: '#EFE5D3',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FDFBF7;
+            background-image: radial-gradient(#D4AF37 0.4px, transparent 0.4px), radial-gradient(#D4AF37 0.4px, #FDFBF7 0.4px);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
+            background-opacity: 0.15;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #D4AF37 0%, #B89326 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow:focus-within {
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3), 0 4px 12px rgba(15, 56, 44, 0.05);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F6F0E6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #DFC177;
+            border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B89326;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 min-h-full flex flex-col antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-950 text-white relative border-b-2 border-gold-500/40 shadow-xl overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-gold-500/10 via-transparent to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-500/15 border border-gold-500/30 text-gold-300 text-xs font-medium tracking-widest uppercase mb-3">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Wedding Link Generator & WhatsApp Blast
+            </div>
+            <h1 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white mb-2">
+                Undangan Pernikahan Digital
+            </h1>
+            <p class="text-emerald-200/90 text-sm sm:text-base max-w-xl mx-auto font-light leading-relaxed">
+                Buat tautan undangan khusus untuk para tamu terhormat lengkap dengan pesan WhatsApp elegan secara praktis.
+            </p>
+        </div>
+    </header>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-6 right-6 z-50 transform translate-y-[-150%] opacity-0 transition-all duration-300 ease-out bg-emerald-950 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-gold-500/40">
+        <div class="p-1.5 bg-gold-500/20 text-gold-400 rounded-lg">
+            <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+        </div>
+        <div>
+            <p id="toast-title" class="text-xs font-semibold text-gold-300 uppercase tracking-wider">Berhasil</p>
+            <p id="toast-message" class="text-xs text-slate-200">Teks telah disalin ke clipboard</p>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left Column: Input Forms & Settings -->
+        <section class="lg:col-span-5 space-y-6">
+            
+            <!-- Link Settings Card -->
+            <div class="glass-card rounded-2xl p-5 shadow-sm space-y-4">
+                <div class="flex items-center gap-2.5 pb-3 border-b border-cream-300/60">
+                    <div class="w-8 h-8 rounded-xl bg-emerald-900/10 text-emerald-900 flex items-center justify-center font-bold">
+                        <i data-lucide="link" class="w-4 h-4 text-emerald-900"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-serif text-lg font-bold text-emerald-950">Pengaturan Tautan</h2>
+                        <p class="text-[11px] text-slate-500">Konfigurasi domain & parameter URL undangan</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div>
+                        <label for="baseUrl" class="block text-xs font-semibold text-slate-700 mb-1">Base URL Undangan</label>
+                        <div class="relative gold-border-glow rounded-xl">
+                            <input type="text" id="baseUrl" 
+                                value="https://putrizlf.github.io/Undangan-Pernikahan/" 
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-xs text-slate-900 bg-white focus:outline-none focus:border-gold-500 font-mono transition"
+                                oninput="updateGenerator()">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="urlParam" class="block text-xs font-semibold text-slate-700 mb-1">Parameter URL (Query)</label>
+                        <div class="relative gold-border-glow rounded-xl">
+                            <input type="text" id="urlParam" 
+                                value="to" 
+                                class="w-full px-3.5 py-2 rounded-xl border border-cream-300 text-xs text-slate-900 bg-white focus:outline-none focus:border-gold-500 font-mono transition"
+                                oninput="updateGenerator()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Message Template Card -->
+            <div class="glass-card rounded-2xl p-5 shadow-sm space-y-4">
+                <div class="flex items-center justify-between pb-3 border-b border-cream-300/60">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-xl bg-emerald-900/10 text-emerald-900 flex items-center justify-center font-bold">
+                            <i data-lucide="message-square" class="w-4 h-4 text-emerald-900"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-serif text-lg font-bold text-emerald-950">Template Teks WA</h2>
+                            <p class="text-[11px] text-slate-500">Sesuaikan ucapan pengantar undangan</p>
+                        </div>
+                    </div>
+                    <button onclick="resetTemplate()" class="text-xs text-gold-600 hover:text-gold-500 font-medium flex items-center gap-1 hover:underline">
+                        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reset
+                    </button>
+                </div>
+
+                <div>
+                    <div class="flex items-center gap-1.5 mb-2 text-[11px] text-slate-600 bg-cream-200/50 p-2 rounded-lg border border-cream-300/60">
+                        <i data-lucide="info" class="w-3.5 h-3.5 text-gold-600 shrink-0"></i>
+                        <span>Tag otomatis: <code class="bg-white px-1.5 py-0.5 rounded text-emerald-900 font-semibold border border-cream-300">{nama}</code> dan <code class="bg-white px-1.5 py-0.5 rounded text-emerald-900 font-semibold border border-cream-300">{link}</code></span>
+                    </div>
+                    <textarea id="messageTemplate" rows="7" 
+                        class="w-full p-3.5 rounded-xl border border-cream-300 focus:outline-none focus:border-gold-500 text-xs text-slate-800 leading-relaxed font-sans bg-white gold-border-glow transition"
+                        oninput="updateGenerator()"></textarea>
+                </div>
+            </div>
+
+            <!-- Guest Input Tabs & Form Card -->
+            <div class="glass-card rounded-2xl p-5 shadow-sm space-y-4">
+                <div class="flex items-center justify-between pb-2 border-b border-cream-300/60">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-xl bg-emerald-900/10 text-emerald-900 flex items-center justify-center font-bold">
+                            <i data-lucide="users" class="w-4 h-4 text-emerald-900"></i>
+                        </div>
+                        <h2 class="font-serif text-lg font-bold text-emerald-950">Input Nama Tamu</h2>
+                    </div>
+                    
+                    <!-- Mode Selector Tabs -->
+                    <div class="bg-cream-200/70 p-1 rounded-xl flex items-center gap-1 border border-cream-300/60">
+                        <button id="tabBulkBtn" onclick="switchInputTab('bulk')" class="px-3 py-1 text-xs font-semibold rounded-lg bg-white text-emerald-950 shadow-sm transition">
+                            Input Banyak
+                        </button>
+                        <button id="tabSingleBtn" onclick="switchInputTab('single')" class="px-3 py-1 text-xs font-medium rounded-lg text-slate-600 hover:text-emerald-950 transition">
+                            Single Cepat
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab 1: Bulk Input Area -->
+                <div id="bulkInputSection" class="space-y-2">
+                    <label for="guestList" class="block text-xs font-medium text-slate-600">
+                        Ketik nama tamu per baris (bebas tulis sebutan seperti <span class="italic text-slate-800 font-semibold">& Partner</span>, <span class="italic text-slate-800 font-semibold">& Keluarga</span>, dll):
+                    </label>
+                    <textarea id="guestList" rows="8" 
+                        placeholder="Nesa Ramanda & Partner&#10;Bapak Ahmad & Keluarga&#10;Siti & Suami&#10;Dr. Hendra, M.Kes" 
+                        class="w-full p-3.5 rounded-xl border border-cream-300 focus:outline-none focus:border-gold-500 text-xs text-slate-800 leading-relaxed bg-white gold-border-glow transition"
+                        oninput="updateGenerator()"></textarea>
+                </div>
+
+                <!-- Tab 2: Quick Single Input -->
+                <div id="singleInputSection" class="space-y-3 hidden">
+                    <div>
+                        <label for="singleName" class="block text-xs font-semibold text-slate-700 mb-1">Nama Tamu & Sebutan</label>
+                        <input type="text" id="singleName" placeholder="Contoh: Nesa Ramanda & Partner"
+                            class="w-full px-3.5 py-2.5 rounded-xl border border-cream-300 text-xs text-slate-900 bg-white focus:outline-none focus:border-gold-500 font-medium transition"
+                            onkeyup="if(event.key === 'Enter') addSingleGuest()">
+                    </div>
+                    <button onclick="addSingleGuest()" class="w-full py-2.5 bg-emerald-900 hover:bg-emerald-950 text-white rounded-xl text-xs font-semibold transition flex items-center justify-center gap-2 shadow-md">
+                        <i data-lucide="user-plus" class="w-4 h-4 text-gold-400"></i> Tambah Ke Daftar
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Right Column: Output Table & Preview -->
+        <section class="lg:col-span-7 space-y-6 flex flex-col">
+            
+            <div class="glass-card rounded-2xl p-6 shadow-sm flex-1 flex flex-col justify-between">
+                <div>
+                    <!-- Header Actions Bar -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-cream-300/70">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h2 class="font-serif text-xl font-bold text-emerald-950">Daftar Link Undangan</h2>
+                                <span id="guestCountBadge" class="bg-emerald-900/10 text-emerald-950 border border-emerald-900/20 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                                    0 Tamu
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-0.5">Tautan otomatis & teks ucapan WhatsApp yang siap dibagikan</p>
+                        </div>
+
+                        <!-- Bulk Action Buttons -->
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <button onclick="copyAllLinks()" title="Salin seluruh link tamu" class="bg-cream-200 hover:bg-cream-300 text-emerald-950 text-xs font-semibold py-2 px-3 rounded-xl transition flex items-center gap-1.5 border border-cream-300">
+                                <i data-lucide="link-2" class="w-3.5 h-3.5 text-gold-600"></i> Salin Semua Link
+                            </button>
+                            <button onclick="copyAllMessages()" title="Salin pesan WA lengkap semua tamu" class="bg-emerald-900 hover:bg-emerald-950 text-white text-xs font-semibold py-2 px-3 rounded-xl transition shadow-sm flex items-center gap-1.5">
+                                <i data-lucide="copy" class="w-3.5 h-3.5 text-gold-400"></i> Salin Teks WA
+                            </button>
+                            <button onclick="exportToCsv()" title="Unduh data link sebagai CSV" class="bg-white hover:bg-cream-100 text-slate-700 text-xs font-semibold p-2 rounded-xl border border-cream-300 transition">
+                                <i data-lucide="download" class="w-4 h-4 text-emerald-800"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Output Table Container -->
+                    <div class="mt-4 rounded-xl border border-cream-300 overflow-hidden bg-white shadow-inner">
+                        <div class="max-h-[560px] overflow-y-auto">
+                            <table class="w-full text-left border-collapse text-xs">
+                                <thead class="bg-emerald-950 text-gold-300 font-semibold uppercase text-[10px] tracking-wider sticky top-0 z-10">
+                                    <tr>
+                                        <th class="py-3 px-3.5 w-10 text-center">No</th>
+                                        <th class="py-3 px-3.5">Nama Tamu & Link</th>
+                                        <th class="py-3 px-3.5 text-right w-36">Aksi Cepat</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="guestTableBody" class="divide-y divide-cream-200/60 bg-white">
+                                    <!-- Rows populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Summary Info -->
+                <div class="mt-4 pt-3 border-t border-cream-300/50 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-2">
+                    <span class="flex items-center gap-1">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-700"></i> Format URL tersimpan secara aman & url-encoded.
+                    </span>
+                    <button onclick="clearAllGuests()" class="text-red-600 hover:text-red-700 font-medium hover:underline flex items-center gap-1">
+                        <i data-lucide="trash-2" class="w-3 h-3"></i> Bersihkan Semua Nama
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- App Script Logic -->
+    <script>
+        const DEFAULT_TEMPLATE = `Assalamu’alaikum Warahmatullahi Wabarakatuh
+
+Dengan penuh kebahagiaan, kami mengabarkan bahwa insyaAllah kami akan melangsungkan pernikahan. 
+
+Kami dengan senang hati mengundang Bapak/Ibu/Saudara/i untuk turut hadir dan memberikan doa serta restu di hari bahagia kami.
+
+Berikut tautan undangan kami:
+{link}
+
+Kehadiran dan doa dari Bapak/Ibu/Saudara/i akan menjadi kebahagiaan tersendiri bagi kami. 🤍✨
+
+Terima kasih banyak 🙏🏻
+Wassalamu’alaikum Warahmatullahi Wabarakatuh`;
+
+        const baseUrlInput = document.getElementById('baseUrl');
+        const urlParamInput = document.getElementById('urlParam');
+        const messageTemplateInput = document.getElementById('messageTemplate');
+        const guestListInput = document.getElementById('guestList');
+        const guestTableBody = document.getElementById('guestTableBody');
+        const guestCountBadge = document.getElementById('guestCountBadge');
+
+        // Initial Setup
+        messageTemplateInput.value = DEFAULT_TEMPLATE;
+        guestListInput.value = "Nesa Ramanda & Partner\nBapak Ahmad & Keluarga\nSiti & Suami\nDr. Hendra, M.Kes";
+
+        // Tab Switcher
+        function switchInputTab(tab) {
+            const bulkSec = document.getElementById('bulkInputSection');
+            const singleSec = document.getElementById('singleInputSection');
+            const bulkBtn = document.getElementById('tabBulkBtn');
+            const singleBtn = document.getElementById('tabSingleBtn');
+
+            if(tab === 'bulk') {
+                bulkSec.classList.remove('hidden');
+                singleSec.classList.add('hidden');
+                bulkBtn.className = "px-3 py-1 text-xs font-semibold rounded-lg bg-white text-emerald-950 shadow-sm transition";
+                singleBtn.className = "px-3 py-1 text-xs font-medium rounded-lg text-slate-600 hover:text-emerald-950 transition";
+            } else {
+                bulkSec.classList.add('hidden');
+                singleSec.classList.remove('hidden');
+                singleBtn.className = "px-3 py-1 text-xs font-semibold rounded-lg bg-white text-emerald-950 shadow-sm transition";
+                bulkBtn.className = "px-3 py-1 text-xs font-medium rounded-lg text-slate-600 hover:text-emerald-950 transition";
+            }
+        }
+
+        // Add single guest helper
+        function addSingleGuest() {
+            const singleInput = document.getElementById('singleName');
+            const val = singleInput.value.trim();
+            if(!val) return;
+
+            let currentText = guestListInput.value.trim();
+            guestListInput.value = currentText ? currentText + "\n" + val : val;
+            singleInput.value = '';
+            updateGenerator();
+            showToast('Tamu Ditambahkan', `${val} berhasil ditambahkan ke daftar.`);
+        }
+
+        function resetTemplate() {
+            messageTemplateInput.value = DEFAULT_TEMPLATE;
+            updateGenerator();
+            showToast('Template Direset', 'Template ucapan telah kembali ke default.');
+        }
+
+        function clearAllGuests() {
+            if(confirm('Apakah Anda yakin ingin menghapus semua daftar nama tamu?')) {
+                guestListInput.value = '';
+                updateGenerator();
+                showToast('Daftar Dibersihkan', 'Daftar nama tamu berhasil dikosongkan.');
+            }
+        }
+
+        function createGuestUrl(rawName) {
+            let baseUrl = baseUrlInput.value.trim();
+            if(!baseUrl.endsWith('/') && !baseUrl.includes('?')) {
+                baseUrl += '/';
+            }
+            const param = urlParamInput.value.trim() || 'to';
+            const cleanName = rawName.replace(/\s+/g, ' ').trim();
+            return `${baseUrl}?${param}=${encodeURIComponent(cleanName)}`;
+        }
+
+        function createWaMessage(rawName, url) {
+            const template = messageTemplateInput.value;
+            const cleanName = rawName.replace(/\s+/g, ' ').trim();
+            return template.replace(/{nama}/g, cleanName).replace(/{link}/g, url);
+        }
+
+        function updateGenerator() {
+            const lines = guestListInput.value
+                .split('\n')
+                .map(line => line.replace(/\s+/g, ' ').trim())
+                .filter(line => line.length > 0);
+
+            guestCountBadge.textContent = `${lines.length} Tamu`;
+            guestTableBody.innerHTML = '';
+
+            if (lines.length === 0) {
+                guestTableBody.innerHTML = `
+                    <tr>
+                        <td colspan="3" class="text-center py-12 text-slate-400 font-light">
+                            <div class="flex flex-col items-center justify-center gap-2">
+                                <i data-lucide="users" class="w-8 h-8 text-cream-300"></i>
+                                <p class="text-xs">Belum ada nama tamu. Masukkan nama pada kolom sebelah kiri.</p>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            lines.forEach((name, index) => {
+                const url = createGuestUrl(name);
+                const message = createWaMessage(name, url);
+
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-cream-100/70 transition border-b border-cream-200/50 last:border-0";
+
+                tr.innerHTML = `
+                    <td class="py-3 px-3.5 text-slate-400 font-mono text-[11px] text-center">${index + 1}</td>
+                    <td class="py-3 px-3.5">
+                        <div class="font-semibold text-slate-900 text-xs sm:text-sm">${escapeHtml(name)}</div>
+                        <a href="${escapeHtml(url)}" target="_blank" class="text-[11px] text-emerald-800 hover:text-gold-600 underline truncate max-w-xs block font-mono mt-0.5 transition">
+                            ${escapeHtml(url)}
+                        </a>
+                    </td>
+                    <td class="py-3 px-3.5 text-right whitespace-nowrap">
+                        <div class="inline-flex items-center gap-1">
+                            <button onclick="copyToClipboard('${escapeJs(url)}', 'Tautan Disalin', 'Link khusus untuk ${escapeJs(name)} berhasil disalin!')" 
+                                title="Salin Link Undangan" 
+                                class="p-2 bg-cream-200/80 hover:bg-cream-300 text-emerald-950 rounded-lg transition active:scale-95">
+                                <i data-lucide="link" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button onclick="copyToClipboard('${escapeJs(message)}', 'Pesan WA Disalin', 'Teks lengkap WhatsApp untuk ${escapeJs(name)} disalin!')" 
+                                title="Salin Teks Lengkap WA" 
+                                class="p-2 bg-emerald-950/10 hover:bg-emerald-950 hover:text-white text-emerald-950 rounded-lg transition active:scale-95">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button onclick="openWaLink('${escapeJs(message)}')" 
+                                title="Buka di WhatsApp" 
+                                class="p-2 bg-emerald-800 hover:bg-emerald-900 text-white rounded-lg transition active:scale-95 shadow-sm">
+                                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </td>
+                `;
+                guestTableBody.appendChild(tr);
+            });
+
+            lucide.createIcons();
+        }
+
+        function copyAllLinks() {
+            const lines = guestListInput.value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+            if (lines.length === 0) return;
+
+            const allLinks = lines.map(name => `${name}\n${createGuestUrl(name)}`).join('\n\n');
+            copyToClipboard(allLinks, 'Semua Link Disalin', `Berhasil menyalin ${lines.length} tautan tamu.`);
+        }
+
+        function copyAllMessages() {
+            const lines = guestListInput.value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+            if (lines.length === 0) return;
+
+            const allMsgs = lines.map(name => {
+                const url = createGuestUrl(name);
+                return `====================\nKEPADA: ${name}\n====================\n${createWaMessage(name, url)}`;
+            }).join('\n\n');
+
+            copyToClipboard(allMsgs, 'Semua Pesan WA Disalin', `Berhasil menyalin ${lines.length} pesan WA tamu.`);
+        }
+
+        function exportToCsv() {
+            const lines = guestListInput.value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+            if (lines.length === 0) {
+                alert('Tidak ada data tamu untuk diexport.');
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,No,Nama Tamu,Link Undangan\n";
+            lines.forEach((name, index) => {
+                const url = createGuestUrl(name);
+                csvContent += `${index + 1},"${name.replace(/"/g, '""')}","${url}"\n`;
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "Daftar_Link_Undangan_Pernikahan.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast('Export Berhasil', 'File CSV daftar tamu telah diunduh.');
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+
+        function escapeJs(str) {
+            return str
+                .replace(/\\/g, '\\\\')
+                .replace(/'/g, "\\'")
+                .replace(/"/g, '&quot;')
+                .replace(/\n/g, '\\n');
+        }
+
+        function copyToClipboard(text, title = "Teks Disalin", msg = "Teks berhasil disalin ke clipboard!") {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast(title, msg);
+            } catch (err) {
+                console.error('Gagal menyalin:', err);
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+
+        function openWaLink(msg) {
+            const targetUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+            window.open(targetUrl, '_blank');
+        }
+
+        let toastTimeout;
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            const toastTitle = document.getElementById('toast-title');
+            const toastMessage = document.getElementById('toast-message');
+            
+            toastTitle.textContent = title;
+            toastMessage.textContent = message;
+            
+            toast.classList.remove('translate-y-[-150%]', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-[-150%]', 'opacity-0');
+            }, 3000);
+        }
+
+        window.onload = function() {
+            lucide.createIcons();
+            updateGenerator();
+        };
+    </script>
+</body>
+</html>
